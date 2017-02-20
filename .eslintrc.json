@@ -1,0 +1,31 @@
+{
+  "extends": "standard",
+  "installedESLint": true,
+  "plugins": [
+    "standard",
+    "promise"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 5
+  },
+  "globals": {
+    "angular": false,
+    "moment": false,
+    "_": false,
+    "AWS": false,
+    "FileReader": false,
+    "screen": false,
+    "$": false,
+    "ionic": false,
+    "cordova": false
+
+  },
+  "rules": {
+    "complexity": ["error", 7],
+    "max-len": ["error", 120],
+    "max-statements": ["error", 50],
+    "max-lines": ["error", 500],
+    "max-params": ["error", 5],
+    "no-unused-vars": [2, { "vars": "all", "args": "all" }]
+  }
+}

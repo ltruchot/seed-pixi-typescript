@@ -1,0 +1,29 @@
+{
+  "name": "pixi-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.ts",
+  "scripts": {
+    "prepublish": "typings install",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --hot --inline --port 5000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.52",
+    "@types/pixi.js": "^4.3.1",
+    "eslint": "^3.16.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.2",
+    "eslint-plugin-standard": "^2.0.1",
+    "pixi.js": "^4.3.5",
+    "transform-loader": "^0.2.3",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.2.0-dev.20170214",
+    "typings": "^2.1.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
