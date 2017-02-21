@@ -1,4 +1,5 @@
 import * as PIXI from './../node_modules/pixi.js/dist/pixi.js';
+import Test from ''
 
 const renderer = PIXI.autoDetectRenderer(256, 256);
 

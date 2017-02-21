@@ -6,7 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build')
   },
 
-  // devtool: 'source-map',
+  devtool: 'source-map',
 
   resolve: {
     // Add '.ts' as a resolvable extension.
