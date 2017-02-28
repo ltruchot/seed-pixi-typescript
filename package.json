@@ -2,7 +2,7 @@
   "name": "pixi-playground",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.ts",
+  "main": "index.html",
   "scripts": {
     "prepublish": "typings install",
     "watch": "webpack --watch",
@@ -21,9 +21,9 @@
     "pixi.js": "^4.3.5",
     "transform-loader": "^0.2.3",
     "ts-loader": "^2.0.0",
-    "typescript": "^2.2.0-dev.20170214",
+    "typescript": "^2.2.1",
     "typings": "^2.1.0",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.3.0"
+    "webpack-dev-server": "^2.4.1"
   }
 }

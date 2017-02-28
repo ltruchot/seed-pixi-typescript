@@ -1,5 +1,5 @@
-import * as PIXI from './../node_modules/pixi.js/dist/pixi.js';
-import Test from ''
+import * as PIXI from 'pixi.js';
+import * as _ from 'lodash'
 
 const renderer = PIXI.autoDetectRenderer(256, 256);
 
