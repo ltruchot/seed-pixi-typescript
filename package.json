@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "typings install",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --hot --inline --port 5000"
+    "start": "webpack-dev-server --hot --inline --port 5000 --contentBase './'"
   },
   "keywords": [],
   "author": "",
