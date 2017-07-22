@@ -1,29 +1,30 @@
 {
   "name": "pixi-playground",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
+  "version": "2.0.0",
+  "license": "CC-BY-NC-4.0",
+  "author": "Loïc TRUCHOT <loic.truchot.pro@gmail.com> (http://laonetics.io)",
+  "description": "A pre installed environnement to work with pixi.js with webpack & typescript",
+  "engines": {
+    "node": "~8.0.0",
+    "npm": "~5.0.0"
+  },
+  "main": "./index.html",
   "scripts": {
-    "prepublish": "typings install",
+    "update": "rm -rf node_modules && npm cache verify && npm i",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --hot --inline --port 5000 --contentBase './'"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["pixijs", "playground", "basic", "webpack", "typescript"],
   "devDependencies": {
-    "@types/lodash": "^4.14.52",
-    "@types/pixi.js": "^4.3.1",
-    "eslint": "^3.16.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.2",
-    "eslint-plugin-standard": "^2.0.1",
-    "pixi.js": "^4.3.5",
-    "transform-loader": "^0.2.3",
-    "ts-loader": "^2.0.0",
-    "typescript": "^2.2.1",
-    "typings": "^2.1.0",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
+    "@types/pixi.js": "^4.5.1",
+    "ts-loader": "^2.2.1",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1",
+    "typings": "^2.1.1",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.1"
+  },
+  "dependencies": {
+    "pixi.js": "^4.5.3"
   }
 }
