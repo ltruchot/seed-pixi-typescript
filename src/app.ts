@@ -2,9 +2,9 @@ import * as PIXI from 'pixi.js';
 
 // 3 following are only there as an example of TypeScript app scaffolding.
 import { IHuman } from './interfaces/utils';
-import { Test } from './classes/Test';
+import { Person } from './classes/Person';
 import { values } from './data/values';
-console.log(<IHuman>new Test('Raymond'), values)
+console.log(<IHuman>new Person('Raymond'), values)
 
 
 const renderer = PIXI.autoDetectRenderer(256, 256);

@@ -4,7 +4,7 @@
 A pre installed environnement to work with pixi.js with webpack & typescript.
 
 
-Run: `npm start`
+Run: `npm start` then browse http://localhost:5000/ with Firefox or Chrome
 
 Current version: Release v2.0.0 "Typescript & Webpack".
 
