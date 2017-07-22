@@ -1,11 +1,21 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "target": "es5",
     "module": "commonjs",
-    "removeComments": true,
     "sourceMap": true,
-    "allowJs": true
+    "allowJs": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "lib": [
+      "es2015",
+      "dom"
+    ]
   },
+  "include": [
+    "./src/app.ts"
+  ],
   "exclude": [
     "node_modules"
   ],
