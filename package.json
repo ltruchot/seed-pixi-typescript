@@ -14,17 +14,23 @@
     "watch": "webpack --watch",
     "start": "webpack-dev-server --hot --inline --port 5000 --contentBase './'"
   },
-  "keywords": ["pixijs", "playground", "basic", "webpack", "typescript"],
+  "keywords": [
+    "pixijs",
+    "playground",
+    "basic",
+    "webpack",
+    "typescript"
+  ],
   "devDependencies": {
-    "@types/pixi.js": "^4.5.1",
-    "ts-loader": "^2.2.1",
-    "tslint": "^5.5.0",
-    "typescript": "^2.4.1",
+    "@types/pixi.js": "^4.5.3",
+    "ts-loader": "^2.3.6",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2",
     "typings": "^2.1.1",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
-    "pixi.js": "^4.5.3"
+    "pixi.js": "^4.5.5"
   }
 }
