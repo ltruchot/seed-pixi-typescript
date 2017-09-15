@@ -1,6 +1,6 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "experimentalDecorators": true,
     "target": "es5",
     "module": "commonjs",
     "sourceMap": true,
@@ -9,15 +9,18 @@
     "noUnusedLocals": true,
     "removeComments": true,
     "lib": [
-      "es2015",
+      "es2017",
       "dom"
     ]
   },
   "include": [
-    "./src/app.ts"
+    "client/client.ts",
+    "server/server.ts",
   ],
   "exclude": [
     "node_modules"
   ],
   "compileOnSave": false
 }
+
+

@@ -1,12 +1,12 @@
 # Pixi playground
 
 
-A pre installed environnement to work with pixi.js with webpack & typescript.
+A pre installed environnement to work with pixi.js with webpack & typescript for web oriented games/projects.
 
 
 Run: `npm start` then browse http://localhost:5000/ with Firefox or Chrome
 
-Current version: Release v2.0.0 "Typescript & Webpack".
+Current version: Release v3.0.0 "Typescript & Webpack".
 
 Author: Loïc TRUCHOT
 
