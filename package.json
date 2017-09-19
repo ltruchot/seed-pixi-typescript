@@ -1,6 +1,6 @@
 {
   "name": "pixi-playground",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "license": "CC-BY-NC-4.0",
   "author": "Loïc TRUCHOT <loic.truchot.pro@gmail.com> (http://laonetics.io)",
   "description": "A pre installed environnement to work with pixi.js with webpack & typescript",
