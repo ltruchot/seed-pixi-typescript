@@ -17,10 +17,7 @@
     ],
     "eofline": true,
     "forin": true,
-    "indent": [
-      true,
-      "tabs"
-    ],
+    "indent": [true, "tabs", 1],
     "label-position": true,
     "max-file-line-count": [
       true,

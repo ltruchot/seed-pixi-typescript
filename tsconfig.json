@@ -9,16 +9,16 @@
     "noUnusedLocals": true,
     "removeComments": true,
     "lib": [
-      "es2017",
+      "es6",
       "dom"
     ]
   },
   "include": [
-    "client/client.ts",
-    "server/server.ts",
-  ],
-  "exclude": [
-    "node_modules"
+    "./client/app.ts",
+    "./server/server.ts",
+    "./webpack/dev.client.config.ts",
+    "./webpack/dev.server.config.ts",
+    "./webpack/prod.config.ts"
   ],
   "compileOnSave": false
 }

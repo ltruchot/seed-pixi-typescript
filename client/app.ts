@@ -1,5 +1,13 @@
 import { Container,  autoDetectRenderer, loader } from 'pixi.js';
-import { Person } from './classes/Person';
+import { Person } from './app/classes/Person';
+
+/*** removable example of socket.io use, @see client/server.ts ***/
+import * as socketIo from 'socket.io-client';
+const socket = socketIo();
+socket.on('active-users-counter', (count: number) => {
+	console.log(`${count} user(s) currently connected.`)
+});
+/*****************************************************************/
 
 // create PIXI renderer
 const canvas = document.getElementById('adneoport') as HTMLCanvasElement;
@@ -20,6 +28,7 @@ function setup () {
 
 	// Create the hero sprite from the texture
 	const hero = new Person('Samir The Machine', '/public/img/hero-white.png');
+	hero.sayHello();
 
 	// Add the cat to the stage
 	stage.addChild(hero.sprite);

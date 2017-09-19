@@ -1,6 +1,6 @@
 {
   "name": "pixi-playground",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "license": "CC-BY-NC-4.0",
   "author": "Loïc TRUCHOT <loic.truchot.pro@gmail.com> (http://laonetics.io)",
   "description": "A pre installed environnement to work with pixi.js with webpack & typescript",
@@ -12,9 +12,13 @@
   "scripts": {
     "update": "rm -rf node_modules && npm cache verify && npm i",
     "gitrefresh": "git reset HEAD --hard && git clean -fd && git fetch --all --tags --prune",
-    "start": "webpack-dev-server --hot --inline --port 5000 --contentBase './' --config ./webpack/dev.config.ts",
-    "release": "webpack -p --config ./webpack/prod.config.ts",
-    "deploy": "node ./dist/server.js"
+    "start": "npm run server && npm run client",
+    "client": "webpack-dev-server --config ./webpack/dev.client.config.ts --contentBase './' --hot --inline --port 5000",
+    "server": "npm run cleanserver && webpack -p --config ./webpack/dev.server.config.ts && npm run launchserver",
+    "release": "rm -rf ./dist && webpack -p --config ./webpack/prod.config.ts",
+    "deploy": "npm run cleanserver && npm run launchserver",
+    "launchserver": "pm2 start ./dist/server.js --watch -f --name pixi-server",
+    "cleanserver": "pm2 delete pixi-server --silent || :"
   },
   "keywords": [
     "pixijs",
@@ -26,11 +30,15 @@
   "devDependencies": {
     "@types/body-parser": "^1.16.5",
     "@types/compression": "0.0.34",
+    "@types/copy-webpack-plugin": "^4.0.1",
     "@types/express": "^4.0.37",
+    "@types/extract-text-webpack-plugin": "^2.1.0",
     "@types/morgan": "^1.7.32",
     "@types/node": "^8.0.28",
     "@types/pixi.js": "^4.5.3",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
@@ -45,10 +53,14 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
+    "@types/socket.io": "^1.4.30",
+    "@types/socket.io-client": "^1.4.30",
     "body-parser": "^1.18.1",
     "compression": "^1.7.0",
     "express": "^4.15.4",
     "morgan": "^1.8.2",
-    "pixi.js": "^4.5.5"
+    "pixi.js": "^4.5.5",
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
   }
 }

@@ -6,8 +6,12 @@ export class Person {
 	sprite: Sprite
 
 	constructor (public name: string, private img: string) {
-		console.log('Hello, my name is ' + this.name)
-		this.sprite = new Sprite(loader.resources[this.img].texture);
+		const texture = loader.resources[this.img].texture;
+		this.sprite = new Sprite(texture);
+	}
+
+	sayHello () {
+		console.log('Hello, my name is ' + this.name);
 	}
 
 	moveRandomly (options: ICoordinate) {
