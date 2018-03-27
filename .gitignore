@@ -53,6 +53,3 @@ jspm_packages/
 
 # dotenv environment variables file
 .env
-
-dist
-config
