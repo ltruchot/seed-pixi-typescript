@@ -1,8 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   entry: './src/app.ts',
@@ -26,8 +27,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        use: 'awesome-typescript-loader'
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -36,6 +36,11 @@ module.exports = {
     ]
   },
   resolve: {
+    plugins: [
+      new TsconfigPathsPlugin({
+        /*configFile: "./path/to/tsconfig.json" */
+      })
+    ],
     extensions: ['.tsx', '.ts', '.js']
   },
   output: {

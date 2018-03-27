@@ -1,5 +1,5 @@
-import { Application, Sprite, loader } from 'pixi.js';
-
+import { Application, loader } from 'pixi.js';
+import { Character } from '@app/character.class';
 class Game {
   private app: Application;
   constructor() {
@@ -20,13 +20,12 @@ class Game {
     loader.load(this.setup.bind(this));
   }
 
-  setup() {
+  setup(): void {
     // append hero
-    const heroSprite = new Sprite(loader.resources['samir'].texture);
-    heroSprite.anchor.y = 0.5;
-    heroSprite.anchor.x = 0.5;
-    heroSprite.y = this.app.view.height / 2;
+    const hero = new Character(loader.resources['samir'].texture);
+    const heroSprite = hero.sprite;
     this.app.stage.addChild(heroSprite);
+    heroSprite.y = 300;
 
     //  animate hero
     let moveLeft = true;
