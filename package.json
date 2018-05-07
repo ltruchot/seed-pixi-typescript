@@ -5,7 +5,7 @@
   "author": "Loïc TRUCHOT <loic.truchot.pro@gmail.com>",
   "description": "A pre installed environnement to work with pixi.js with webpack & typescript",
   "engines": {
-    "node": "~8.10.0",
+    "node": "~8.11.0",
     "npm": "~5.8.0"
   },
   "main": "./index.html",

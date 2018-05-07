@@ -25,7 +25,7 @@ Licences: [CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/): you c
 rm -rf node_modules 
   && npm cache verify
   && npm i npm -g
-  && npm i @types/node @types/pixi.js clean-webpack-plugin copy-webpack-plugin file-loader html-webpack-plugin awesome-typescript-loader tslint typescript webpack webpack-cli webpack-dev-server --save-dev
+  && npm i @types/node @types/pixi.js clean-webpack-plugin copy-webpack-plugin file-loader html-webpack-plugin awesome-typescript-loader tslint typescript webpack webpack-cli webpack-dev-server tsconfig-paths-webpack-plugin --save-dev
   && npm i pixi.js --save
 */
 ```
