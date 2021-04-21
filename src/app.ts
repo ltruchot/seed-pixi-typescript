@@ -1,4 +1,6 @@
-import { Application, Loader } from 'pixi.js';
+import {
+  Application, Loader, Resource, Texture,
+} from 'pixi.js';
 import Character from './app/Character';
 
 const loader = Loader.shared;
@@ -25,7 +27,7 @@ class Game {
 
   setup(): void {
     // append hero
-    const hero = new Character(loader.resources.samir.texture);
+    const hero = new Character(loader.resources.samir.texture as Texture<Resource>);
     this.app.stage.addChild(hero.sprite);
     hero.setTopPosition(256);
 
