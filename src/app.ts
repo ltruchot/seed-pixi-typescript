@@ -4,6 +4,7 @@ import {
 import Character from './app/Character';
 
 const loader = Loader.shared;
+
 class Game {
   private app: Application;
 
