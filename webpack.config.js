@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 // node
 const path = require('path');
 
@@ -46,16 +47,8 @@ module.exports = {
         ],
       },
       {
-        // Now we apply rule for images
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-          context: 'public',
-        },
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        // Now we apply rule for static files
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf|otf|mp3|ogg|mp4)$/,
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
@@ -85,7 +78,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js' ],
+    extensions: ['.ts', '.js'],
   },
   devServer: {
     open: true,
