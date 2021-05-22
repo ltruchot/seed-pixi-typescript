@@ -1,29 +1,29 @@
-import { Sprite, Texture, Loader } from 'pixi.js';
+import {
+  Sprite, Texture, Resource,
+} from 'pixi.js';
 
-const loader = Loader.shared;
-
-export default class Character {
+type Character = {
   sprite: Sprite;
-
-  speed = 2;
-
-  direction: 'left' | 'right' = 'right';
-
-  constructor(public texture: Texture) {
-    this.sprite = new Sprite(loader.resources.samir.texture);
-    this.sprite.anchor.y = 0.5;
-    this.sprite.anchor.x = 0.5;
-  }
-
-  setTopPosition(y: number): void {
-    this.sprite.y = y;
-  }
-
-  move(): void {
-    if (this.direction === 'right') {
-      this.sprite.x += this.speed;
-    } else {
-      this.sprite.x -= this.speed;
-    }
-  }
+  speed: number;
+  direction: 'left' | 'right';
 }
+
+export const createCharacter = (texture: Texture<Resource>, x: number, y: number): Character => {
+  const sprite = new Sprite(texture); // create sprite
+  sprite.anchor.set(0.5); // center origin of sprite
+  sprite.y = y; // center in canvas
+  sprite.x = x;
+  return {
+    sprite,
+    speed: 2,
+    direction: 'right',
+  };
+};
+
+export const moveCharacter = (c: Character): void => {
+  if (c.direction === 'right') {
+    c.sprite.x += c.speed;
+  } else {
+    c.sprite.x -= c.speed;
+  }
+};
