@@ -23,10 +23,12 @@ module.exports = {
       title: 'Pixi / Typescript seed',
     }),
     new CopyPlugin({
-      patterns: [{
-        from: './src/assets',
-        to: './assets',
-      }],
+      patterns: [
+        {
+          from: './src/assets',
+          to: './assets',
+        },
+      ],
     }),
     new webpack.ProgressPlugin(),
   ],
@@ -82,7 +84,7 @@ module.exports = {
   },
   devServer: {
     open: true,
-    disableHostCheck: true,
+    allowedHosts: 'all',
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
