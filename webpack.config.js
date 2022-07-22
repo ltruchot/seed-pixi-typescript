@@ -1,32 +1,32 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // node
-const path = require("path");
+const path = require('path');
 
 // npm
-const webpack = require("webpack");
-const CopyPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  entry: "./src/app.ts",
-  devtool: "source-map",
+  mode: 'development',
+  entry: './src/app.ts',
+  devtool: 'source-map',
   output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "dist"),
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
   },
 
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Pixi / Typescript seed",
+      title: 'Pixi / Typescript seed',
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: "./src/assets",
-          to: "./assets",
+          from: './src/assets',
+          to: './assets',
         },
       ],
     }),
@@ -38,12 +38,12 @@ module.exports = {
       {
         test: /\.scss$/i,
         use: [
-          "style-loader",
-          "css-loader",
+          'style-loader',
+          'css-loader',
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
-              implementation: require("sass"),
+              implementation: require('sass'),
             },
           },
         ],
@@ -51,25 +51,25 @@ module.exports = {
       {
         // Now we apply rule for static files
         test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf|otf|mp3|ogg|mp4)$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "[path][name].[ext]",
-          context: "public",
+          name: '[path][name].[ext]',
+          context: 'public',
         },
       },
       {
         test: /\.ts$/,
-        use: "ts-loader",
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.js$/,
-        include: [path.resolve(__dirname, "src")],
-        loader: "babel-loader",
+        include: [path.resolve(__dirname, 'src')],
+        loader: 'babel-loader',
         options: {
           presets: [
             [
-              "@babel/preset-env",
+              '@babel/preset-env',
               {
                 modules: false,
               },
@@ -80,16 +80,16 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: ['.ts', '.js'],
   },
   devServer: {
     open: true,
-    allowedHosts: "all",
+    allowedHosts: 'all',
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers":
-        "X-Requested-With, content-type, Authorization",
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers':
+        'X-Requested-With, content-type, Authorization',
     },
   },
 };
