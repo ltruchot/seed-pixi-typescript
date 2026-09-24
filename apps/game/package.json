@@ -1,0 +1,22 @@
+{
+  "name": "game",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The seed game: a hero you move with the keyboard. Copy it to start a new one.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "ready": "vp test && vp build && vp run e2e",
+    "e2e": "playwright test -c e2e/playwright.config.ts"
+  },
+  "dependencies": {
+    "pixi.js": "catalog:"
+  },
+  "devDependencies": {
+    "@playwright/test": "catalog:",
+    "@seed-pixi/vite-config": "workspace:*",
+    "@types/node": "catalog:",
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
+  }
+}

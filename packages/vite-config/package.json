@@ -1,0 +1,13 @@
+{
+  "name": "@seed-pixi/vite-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared Vite+ config of the games in apps/*: base path, dev and preview ports.",
+  "type": "module",
+  "exports": "./index.ts",
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
+  }
+}

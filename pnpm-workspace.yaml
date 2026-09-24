@@ -1,0 +1,20 @@
+packages:
+  - apps/*
+  - packages/*
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@0.3.3
+  vite-plus: 0.3.3
+  typescript: 7.0.2
+  "@types/node": 26.6.2
+  pixi.js: 8.21.0
+  "@playwright/test": 1.63.0
+# Supply chain: a version must be 3 days old before it can be installed
+# (most malicious releases are yanked within hours).
+minimumReleaseAge: 4320
+overrides:
+  vite@*: "catalog:"
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: "*"

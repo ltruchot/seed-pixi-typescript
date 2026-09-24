@@ -1,15 +1,29 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Dependency directories
+# Dependencies
 node_modules/
 
-# Optional npm cache directory
-.npm
-
-# Bundle
+# Build output
 dist/
+*.tsbuildinfo
+.vite/
+
+# Tests
+coverage/
+test-results/
+playwright-report/
+
+# Local state (test results, screenshots, scratch runs)
+.local/
+*.log
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+.DS_Store
+.claude/settings.local.json

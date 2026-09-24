@@ -1,0 +1,11 @@
+/* Full-window canvas: no margin, no scrollbar. */
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
