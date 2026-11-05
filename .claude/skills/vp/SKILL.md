@@ -62,8 +62,8 @@ offline, and the online page when the two differ.
   syntax, `-w` the workspace root, `<package>#<task>` one task of one package.
 - `--parallel` drops dependency ordering. `--cache` and `--no-cache` override the cache.
 - A task name lives in `vite.config.ts` (`run.tasks`) or in `package.json`, never in both.
-- Tasks are cached by default, scripts are not. Set `cache: false` on a dev server and on
-  anything that must always run.
+- Tasks are cached by default, scripts are not; `run.cache: true` caches both. Set
+  `cache: false` on a dev server and on anything that must always run.
 - A task runs in a clean environment: only a short list (`PATH`, `HOME`, `CI`, ...) passes.
   Another variable goes in `cache.env` (part of the cache key) or `cache.untrackedEnv`.
 - A command string is read by a shell. `&&` chains are split into sub-tasks cached one by
@@ -115,18 +115,32 @@ back end: remove `index.html`, `public/` and the DOM code.
   `vitest@*` override to the version `vp toolchain vitest` prints, then `vp install`.
 - An out-of-date `vitest` pin installs the previous runner beside the bundled one and splits
   mocks and `expect` between two copies.
+- `vp migrate` walks the whole tree, git-ignored directories included: on a repo holding
+  hundreds of GB of assets it runs for minutes without writing *(measured)*. Upgrade by hand there.
 - Reference: `node_modules/vite-plus/docs/guide/upgrade-project.md`.
 
 ## Node and the package manager
 
+Vite+ owns both: no mise, nvm, Volta or Corepack for Node or pnpm. Their shims ahead of
+`~/.vite-plus/bin` on `PATH` win, and `vp env doctor` flags them `(not vp shim)`.
+
+- `vp env pin node@<version> pnpm@<version>` writes the project pins: an existing
+  `.node-version` or `packageManager` is updated, otherwise `devEngines`.
 - Node resolves from the nearest of, in order: `.node-version`, `devEngines.runtime`,
-  `engines.node`, `.nvmrc`. `vp env pin <version>` writes the pin, `vp env current` shows
-  what resolved and from where, `vp env doctor` diagnoses.
+  `engines.node`, `.nvmrc`. `engines.node` is the consumer range, the pin is the dev runtime.
+  `vp env current` shows what resolved and from where, `vp env doctor` diagnoses.
 - The package manager comes from `packageManager`, then `devEngines.packageManager`. With
   both, `packageManager` drives and a mismatch warns.
-- In system-first mode for the package manager (`vp env off pnpm`), Vite+ runs the `pnpm` on
-  `PATH`, which may not be the pinned one. `vp env on pnpm` restores managed mode;
-  `vp env doctor pnpm` shows the mode.
+- pnpm 11+ also switches its own version and manages `devEngines.runtime`. Let Vite+ do both,
+  in `pnpm-workspace.yaml`:
+
+  ```yaml
+  pmOnFail: ignore
+  runtimeOnFail: ignore
+  ```
+
+- In system-first mode (`vp env off pnpm`), Vite+ runs the `pnpm` on `PATH`, which may not be
+  the pinned one. `vp env on pnpm` restores managed mode; `vp env doctor pnpm` shows the mode.
 - `vp env`, `vp node <file>`, `vp upgrade` need the global CLI. `node: command not found`
   means no global Node: `vpx <file>` or `vp node <file>`.
 
