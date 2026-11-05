@@ -22,10 +22,9 @@ edited here. This file holds what is true of this repo only.
   versions are read there and in `package.json` `devEngines.packageManager`.
 - `minimumReleaseAge: 4320`: a version must be 3 days old to install. A fresh release fails
   with a "minimumReleaseAge" error: take the previous one.
-- Node is pinned in `.node-version` (`vp env pin <version> --target node-version`; CI:
-  `node-version` in `ci.yml`), not in `devEngines.runtime`: with `devEngines.runtime`, pnpm
-  manages Node too and CI `vp install --frozen-lockfile` fails on
-  `1 dependency was added: node@runtime:…`.
+- Node is pinned in `.node-version` (`vp env pin <version>`); CI reads it through Vite+
+  (`setup-vp` with no `node-version`). `runtimeOnFail: ignore` keeps pnpm from managing Node:
+  without it, CI `vp install --frozen-lockfile` fails on `1 dependency was added: node@runtime:…`.
 - The root `vite.config.ts` owns fmt, lint, staged and `run.tasks`; per-package lint rules go
   in `lint.overrides`. Each app's `vite.config.ts` owns its Vite/Vitest config.
 
