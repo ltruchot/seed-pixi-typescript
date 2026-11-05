@@ -2,8 +2,8 @@ packages:
   - apps/*
   - packages/*
 catalog:
-  vite: npm:@voidzero-dev/vite-plus-core@0.3.3
-  vite-plus: 0.3.3
+  vite: npm:@voidzero-dev/vite-plus-core@1.5.0
+  vite-plus: 1.5.0
   typescript: 7.0.2
   "@types/node": 26.6.2
   pixi.js: 8.21.0
@@ -18,3 +18,82 @@ peerDependencyRules:
     - vite
   allowedVersions:
     vite: "*"
+# Vite+ owns the pnpm and Node versions (devEngines): pnpm neither switches itself nor
+# manages the runtime.
+pmOnFail: ignore
+runtimeOnFail: ignore
+# Exact versions of the Vite+ 1.5.0 toolchain, younger than minimumReleaseAge when they
+# were installed. Each line goes once its version is three days old.
+minimumReleaseAgeExclude:
+  - "@oxc-project/runtime@0.157.0"
+  - "@oxc-project/types@0.157.0"
+  - "@oxfmt/binding-android-arm-eabi@0.76.0"
+  - "@oxfmt/binding-android-arm64@0.76.0"
+  - "@oxfmt/binding-darwin-arm64@0.76.0"
+  - "@oxfmt/binding-darwin-x64@0.76.0"
+  - "@oxfmt/binding-freebsd-x64@0.76.0"
+  - "@oxfmt/binding-linux-arm-gnueabihf@0.76.0"
+  - "@oxfmt/binding-linux-arm-musleabihf@0.76.0"
+  - "@oxfmt/binding-linux-arm64-gnu@0.76.0"
+  - "@oxfmt/binding-linux-arm64-musl@0.76.0"
+  - "@oxfmt/binding-linux-ppc64-gnu@0.76.0"
+  - "@oxfmt/binding-linux-riscv64-gnu@0.76.0"
+  - "@oxfmt/binding-linux-riscv64-musl@0.76.0"
+  - "@oxfmt/binding-linux-s390x-gnu@0.76.0"
+  - "@oxfmt/binding-linux-x64-gnu@0.76.0"
+  - "@oxfmt/binding-linux-x64-musl@0.76.0"
+  - "@oxfmt/binding-openharmony-arm64@0.76.0"
+  - "@oxfmt/binding-win32-arm64-msvc@0.76.0"
+  - "@oxfmt/binding-win32-ia32-msvc@0.76.0"
+  - "@oxfmt/binding-win32-x64-msvc@0.76.0"
+  - "@oxlint/binding-android-arm-eabi@1.91.0"
+  - "@oxlint/binding-android-arm64@1.91.0"
+  - "@oxlint/binding-darwin-arm64@1.91.0"
+  - "@oxlint/binding-darwin-x64@1.91.0"
+  - "@oxlint/binding-freebsd-x64@1.91.0"
+  - "@oxlint/binding-linux-arm-gnueabihf@1.91.0"
+  - "@oxlint/binding-linux-arm-musleabihf@1.91.0"
+  - "@oxlint/binding-linux-arm64-gnu@1.91.0"
+  - "@oxlint/binding-linux-arm64-musl@1.91.0"
+  - "@oxlint/binding-linux-ppc64-gnu@1.91.0"
+  - "@oxlint/binding-linux-riscv64-gnu@1.91.0"
+  - "@oxlint/binding-linux-riscv64-musl@1.91.0"
+  - "@oxlint/binding-linux-s390x-gnu@1.91.0"
+  - "@oxlint/binding-linux-x64-gnu@1.91.0"
+  - "@oxlint/binding-linux-x64-musl@1.91.0"
+  - "@oxlint/binding-openharmony-arm64@1.91.0"
+  - "@oxlint/binding-win32-arm64-msvc@1.91.0"
+  - "@oxlint/binding-win32-ia32-msvc@1.91.0"
+  - "@oxlint/binding-win32-x64-msvc@1.91.0"
+  - "@oxlint/plugins@1.91.0"
+  - "@vitest/browser@5.1.0"
+  - "@vitest/browser-preview@5.1.0"
+  - "@vitest/mocker@5.1.0"
+  - "@vitest/pretty-format@5.1.0"
+  - "@vitest/snapshot@5.1.0"
+  - "@vitest/spy@5.1.0"
+  - "@vitest/ui@5.1.0"
+  - "@vitest/utils@5.1.0"
+  - "@voidzero-dev/vite-plus-core@1.5.0"
+  - "@voidzero-dev/vite-plus-darwin-arm64@1.5.0"
+  - "@voidzero-dev/vite-plus-darwin-x64@1.5.0"
+  - "@voidzero-dev/vite-plus-linux-arm64-gnu@1.5.0"
+  - "@voidzero-dev/vite-plus-linux-arm64-musl@1.5.0"
+  - "@voidzero-dev/vite-plus-linux-x64-gnu@1.5.0"
+  - "@voidzero-dev/vite-plus-linux-x64-musl@1.5.0"
+  - "@voidzero-dev/vite-plus-win32-arm64-msvc@1.5.0"
+  - "@voidzero-dev/vite-plus-win32-x64-msvc@1.5.0"
+  - "oxfmt@0.76.0"
+  - "oxlint@1.91.0"
+  - "vite-plus@1.5.0"
+  - "vitest@5.1.0"
+  - vite-plus
+  - "@voidzero-dev/*"
+  - oxlint
+  - "@oxlint/*"
+  - oxlint-tsgolint
+  - "@oxlint-tsgolint/*"
+  - oxfmt
+  - "@oxfmt/*"
+  - vitest
+  - "@vitest/*"
