@@ -1,0 +1,74 @@
+{
+  "permissions": [
+    {
+      "action": "shell",
+      "resource": "vp check",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "vp check --fix",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "vp check --fix *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "vp install",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "vp run ready",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "vp run *#ready",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "vp run skills:pixi",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "vp -C apps/game test",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "vp -C apps/game build",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "vp -C apps/game run e2e",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "git status *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "git diff *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "git log *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "git show *",
+      "effect": "allow"
+    }
+  ]
+}

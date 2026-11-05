@@ -42,7 +42,7 @@ Open http://localhost:8080/ and move the hero with the arrows (or WASD / ZQSD).
 
 First e2e run: `vp -C apps/game exec playwright install chromium`.
 TypeScript is as strict as it gets: the compiler and the linter will teach you a lot.
-Working with Claude Code: see `CLAUDE.md` and `.claude/skills/` (official PixiJS skills included).
+Working with Claude Code: see `AGENTS.md` and `.claude/skills/` (official PixiJS skills included).
 
 ## More infos
 

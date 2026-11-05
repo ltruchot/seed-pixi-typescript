@@ -1,4 +1,42 @@
 {
+  "harmonize": {
+    "artifacts": {
+      "opencode.json": {
+        "created": true,
+        "hash": "8e7662c23d0d8ec573b38e364410230dd8573424bf3ff7cf85da45edceeb7eba",
+        "kind": "permission",
+        "mine": [
+          "shell|vp check|allow",
+          "shell|vp check --fix|allow",
+          "shell|vp check --fix *|allow",
+          "shell|vp install|allow",
+          "shell|vp run ready|allow",
+          "shell|vp run *#ready|allow",
+          "shell|vp run skills:pixi|allow",
+          "shell|vp -C apps/game test|allow",
+          "shell|vp -C apps/game build|allow",
+          "shell|vp -C apps/game run e2e|allow",
+          "shell|git status *|allow",
+          "shell|git diff *|allow",
+          "shell|git log *|allow",
+          "shell|git show *|allow"
+        ],
+        "sources": {
+          ".claude/settings.json": "671d1cb19910b94d6fb8ff4397722278c827c1f19e81f961bae8b869f901b999"
+        }
+      }
+    },
+    "from": "claude",
+    "ops": [
+      {
+        "op": "mv",
+        "path": "CLAUDE.md",
+        "to": "AGENTS.md"
+      }
+    ],
+    "rules": "pure",
+    "version": 1
+  },
   "skills": {
     "vp": {
       "answers": {
