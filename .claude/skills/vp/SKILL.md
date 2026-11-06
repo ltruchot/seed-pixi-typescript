@@ -1,12 +1,6 @@
 ---
 name: vp
 description: Vite+ (vp) in a pnpm workspace. Run `vp <command>` instead of pnpm, npm, node, vite, vitest, oxlint, oxfmt or tsx directly. Use before touching package.json, vite.config.ts, tsconfig*.json, pnpm-workspace.yaml or .vite-hooks/, and before running install, dev, build, test, lint, a task or a script.
-paths:
-  - "**/package.json"
-  - "**/vite.config.ts"
-  - "**/tsconfig*.json"
-  - "pnpm-workspace.yaml"
-  - ".vite-hooks/*"
 ---
 
 # Vite+ (`vp`)
@@ -103,6 +97,9 @@ back end: remove `index.html`, `public/` and the DOM code.
   `minimumReleaseAgeExclude` by exact version (`"@voidzero-dev/vite-plus-core@1.5.0"`, one
   line per platform package) when the reason is known. A bare name exempts every future
   release.
+- pnpm 12 checks the lockfile against the policy on every install, `--frozen-lockfile`
+  included: an exclusion stays until its version is that old. The error lists 20 entries
+  then `…and N more`; the full set is every lockfile entry published after the cutoff.
 - Exact versions: `vp add -E`, or `savePrefix: ""`.
 
 ## Upgrading Vite+

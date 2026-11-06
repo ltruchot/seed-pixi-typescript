@@ -1,11 +1,6 @@
 ---
 name: vp-local
 description: This repo's Vite+ setup, on top of the shared `vp` skill - the game app and its ports, `gameApp`, the catalog and the 3-day release age, the dependency update steps, the Pixi skills sync, and the traps met here. Load with `vp` before touching package.json, vite.config.ts, pnpm-workspace.yaml, tsconfig*.json, or running install/dev/build/test.
-paths:
-  - "**/package.json"
-  - "**/vite.config.ts"
-  - "**/tsconfig*.json"
-  - "pnpm-workspace.yaml"
 ---
 
 # Vite+ in this repo
