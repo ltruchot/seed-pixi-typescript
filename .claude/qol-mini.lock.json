@@ -38,6 +38,33 @@
     "version": 1
   },
   "skills": {
+    "css-modern": {
+      "answers": {
+        "TOKENS_FILE": "apps/game/src/tokens.css",
+        "TOKEN_PREFIX": "--pixi"
+      },
+      "files": {
+        "SKILL.md": "13e769a254352ee0e46afd0ba1b820ccdb4c6b080dd3ccaf7d9431164d1be7e6",
+        "references/accessibility.md": "51e19fb8ee8fb513e166a463237e43efda48d94be70423c626152b69d7836720",
+        "references/animations.md": "ca20a87af57cf9103d45c803a62c03d8157b07c7620cb1e02f0887fb0584b54b",
+        "references/color.md": "d847ffef51f074455a888d115b9904ee3b8c9a3495404527091e630b6d5de98c",
+        "references/design-tokens.md": "bee6c6d5496abd983943fae4efb84740f5503de7f457d19342f26b141d552f5b",
+        "references/layout.md": "cdf04b79af9980c870392a17d1e920b738f688de1d6f466d3a0f752d6d6bbd5e",
+        "references/reset.md": "50de34987819c2f31cff050ab19b1f4d2178697c1c1a07bab8b325a796addf70",
+        "references/selectors.md": "feaf67ab5dfe13a3f1f3239f1471c3b6ab6c236ac81774a9f67f96756a013afc",
+        "references/typography.md": "d9e32d5e94a1861adf7adacd193605f9bdc3deda33516898d6e31710d31aea65",
+        "references/utilities.md": "4e8e233a629cc9d24863ff8fc6ebdfc51f257f09c69aea0b38c693c2ab55c071"
+      },
+      "path": ".claude/skills/css-modern",
+      "ref": "0.6.3",
+      "renderedHash": "f945e3fcab80dcfb9cc1babbd387c387f51c0a4c08a0b79f6f386f6716635684",
+      "secrets": [],
+      "sha": "local:14c55c3d8072c12494b2139f1f67e99cf2c34bd12c2a4f5567e6f10b2e6544df",
+      "skillPath": "skills/css-modern",
+      "source": "qol-mini",
+      "sourceType": "local",
+      "templateHash": "2d851968c79dc3250a1481039c976a4487d80305e03e4a5c1526417e4bd845c4"
+    },
     "vp": {
       "answers": {
         "APP_DIR": "apps/game",

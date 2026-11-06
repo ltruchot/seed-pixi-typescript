@@ -9,8 +9,12 @@ export default defineConfig({
   },
   fmt: {
     // Official PixiJS skills, copied as-is from node_modules/pixi.js/skills.
-    // .claude/skills/vp: managed by qol-mini (.claude/qol-mini.lock.json), never rewritten here.
-    ignorePatterns: [".claude/skills/pixijs*/**", ".claude/skills/vp/**"],
+    // .claude/skills/vp, .claude/skills/css-modern: managed by qol-mini (.claude/qol-mini.lock.json), never rewritten here.
+    ignorePatterns: [
+      ".claude/skills/pixijs*/**",
+      ".claude/skills/vp/**",
+      ".claude/skills/css-modern/**",
+    ],
   },
   lint: {
     ignorePatterns: [
@@ -18,6 +22,7 @@ export default defineConfig({
       "**/test-results/**",
       "**/playwright-report/**",
       ".claude/skills/vp/**",
+      ".claude/skills/css-modern/**",
     ],
     plugins: ["eslint", "typescript", "unicorn", "oxc", "import", "promise", "node", "vitest"],
     jsPlugins: [{ name: "vite-plus", specifier: "vite-plus/oxlint-plugin" }],
